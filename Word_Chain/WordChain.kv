@@ -1,0 +1,101 @@
+<AppWidget>
+
+	BoxLayout:
+		orientation: 'vertical'
+		size: root.width, root.height
+
+		# GridLayout:
+		# 	padding:0
+		# 	spacing:0
+		# 	cols: 2
+		# 	size_hint_y: 0.05
+
+		# 	Button:
+		# 		size_hint_x: 0.04
+		# 		size_hint_y: 0.04
+		# 		# background_color: (255/255, 166/255, 77/255)
+		# 		background_normal: 'assets/normalr.png'
+		# 		background_down: 'assets/downr.png'
+
+		GridLayout:
+			cols: 3 
+			size_hint_y: 0.05
+			canvas.before:
+				Color:
+					rgb: (255/255, 153/255, 51/255)
+				Rectangle:
+					size: self.size
+					pos: self.pos
+			
+			Button:
+				size_hint_x: 0.04
+				size_hint_y: 0.04
+				# background_color: (255/255, 166/255, 77/255)
+				background_normal: 'assets/normalr.png'
+				background_down: 'assets/downr.png'
+
+			Label:
+				size_hint_x: 0.96
+
+			Button:
+				size_hint_x: 0.04
+				font_name: 'arial-unicode-ms.ttf'
+				text: "\u2573"
+				background_color: (255/255, 166/255, 77/255)
+				background_down: ''
+				on_release : root.on_stop()
+
+		BoxLayout:
+
+			size_hint_y: 0.95
+
+			canvas.before:
+				Color:
+					rgb: (255/255, 153/255, 51/255)
+				Rectangle:
+					size: self.size
+					pos: self.pos
+
+
+			orientation: "vertical"
+			padding:20
+			spacing:20
+					
+			Label:
+				text: "Word Chain"
+				font_name: 'CaviarDreams.ttf'
+				font_size: 60
+				size_hint_y: (0.5)
+				outline_color: (1,1,1)
+				outline_width: 1
+				
+			Label:
+				text: "Start by typing in a word..."
+				font_size: 18
+				size_hint_y: 0.05
+
+			GridLayout:
+
+				cols: 2
+				size_hint_y: 0.1
+				spacing: 5
+
+				TextInput:
+					multiline: False
+					size_hint_x: 0.9
+
+				Button:
+					text: 'Go!'
+					size_hint_x: 0.1
+					background_color: (255/255, 166/255, 77/255)
+					background_down: ''
+
+			Label:
+				text: ""
+
+			Label:
+				text: "Made by Sajid. ;)"
+				font_size: 12
+				size_hint_y: 0.1
+				outline_color: (1,1,1)
+				outline_width: 0.1
